@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
 
@@ -11,7 +11,7 @@ const homeURL = process.env.PUBLIC_URL || "";
 console.log(homeURL);
 const router = createBrowserRouter([
   {
-    path: homeURL + "/",
+    path: homeURL,
     element: <App />,
   },
   {
@@ -27,7 +27,14 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path={homeURL + "/"} element={<App/>}/>
+      <Route path={homeURL + "/contact"} element={<Contact/>}/>
+      <Route path={homeURL + "/about"} element={<About/>}/>
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
