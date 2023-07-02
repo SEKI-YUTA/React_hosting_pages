@@ -31,8 +31,8 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path={homeURL + "/"} element={<App/>}/>
-      <Route path={homeURL + "/contact"} element={<Contact/>}/>
-      <Route path={homeURL + "/about"} element={<About/>}/>
+      <Route path={homeURL + "React_hosting_pages/contact"} element={<Contact/>}/>
+      <Route path={homeURL + "React_hosting_pages/about"} element={<About/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
